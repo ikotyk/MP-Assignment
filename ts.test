@@ -1,0 +1,12 @@
+@@ Parameterized
+    | device     | size        | tags        |
+    | mobile     | 480x640     | all,mobile  |
+   #| tablet     | 600x1280    | all,tablet  |
+   #| desktop    | 1440x900    | all,desktop |
+
+
+Search results page responsive design test on ${device} device
+    http://www.marktplaats.nl/z/audio-tv-en-foto/tv-s-plasma-lcd-en-led.html?categoryId=1120 ${size}
+        cookie "MpAbTest=6994.a; path=/" 
+        check responsive_search.spec --include "${tags}"
+
